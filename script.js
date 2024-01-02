@@ -91,3 +91,10 @@ var finances = [
   var totalMonths = "Total Months: " + finances.length;
 
   console.log(totalMonths);
+
+  // net total amount in those 86 months
+  var sum = 0
+
+  for (let i = 0; i < finances.length; i++){
+    sum += finances[i][1];
+}

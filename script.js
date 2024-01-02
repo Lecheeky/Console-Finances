@@ -107,3 +107,24 @@ var totalSum = "Total: $" + sum
   var averageChange = Math.floor(sum/finances.length)
 
   console.log(averageChange)
+
+    //greatest increase in profit over 86 months
+
+    var greatestIncrease = {
+        date: '',
+        amount: 0
+      };
+      
+      for (var i = 1; i < finances.length; i++) {
+        var currentMonth = finances[i];
+        var previousMonth = finances[i - 1];
+      
+        var difference = currentMonth[1] - previousMonth[1];
+      
+        if (difference > greatestIncrease.amount) {
+          greatestIncrease.date = currentMonth[0];
+          greatestIncrease.amount = difference;
+        }
+      }
+      
+      console.log("Greatest Increase in Profit/Losses: " + "Date:", greatestIncrease.date + "Amount:", greatestIncrease.amount);

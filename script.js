@@ -98,3 +98,12 @@ var finances = [
   for (let i = 0; i < finances.length; i++){
     sum += finances[i][1];
 }
+
+var totalSum = "Total: $" + sum
+  console.log(totalSum);
+
+  // average change in profit/losses over 86 months
+
+  var averageChange = Math.floor(sum/finances.length)
+
+  console.log(averageChange)

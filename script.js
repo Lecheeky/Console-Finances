@@ -128,3 +128,24 @@ var totalSum = "Total: $" + sum
       }
       
       console.log("Greatest Increase in Profit/Losses: " + "Date:", greatestIncrease.date + "Amount:", greatestIncrease.amount);
+
+        //greatest decrease in profit over 86 months//
+
+  var greatestDecrease = {
+    date: '',
+    amount: 0
+  };
+
+  for (var i = 1; i < finances.length; i++) {
+    var currentMonth = finances[i]
+    var previousMonth = finances[i - 1];
+
+    var difference = currentMonth[1] - previousMonth[1]
+
+    if (difference < greatestDecrease.amount) {
+      greatestDecrease.date = currentMonth[0];
+      greatestDecrease.amount = difference;
+    }
+  }
+
+  console.log("Greatest Decrease in Profit/Losses: " + "Date:", greatestDecrease.date + "Amount:", greatestDecrease.amount);
